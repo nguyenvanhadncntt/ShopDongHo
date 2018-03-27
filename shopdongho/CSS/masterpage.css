@@ -1,0 +1,76 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: medium;
+}
+
+a {
+  text-decoration: none;
+  color:Blue;
+}
+
+a:hover {
+  text-decoration: underline;
+  color:Blue;
+}
+.banner
+{
+  width:980px;
+  height: 210px;
+  background-color: #000000;
+}
+.menu
+{
+    font-family:Tahoma, Verdana;
+	font-size: medium;
+	color:#6F3A15;
+	text-align:center;
+	font-weight:bold;
+}
+.tablemaster
+{
+    background:#FFFFFF;
+}
+.footer {
+	clear:both;
+	text-align:center;
+	font-size:11px;
+	color:#666;
+	background-color:#E2E2E2;
+	padding: 8px;
+	margin-bottom:5px;
+	border-bottom:2px solid #ccc;
+}
+.tablelogin
+{
+    font-family:Times New Roman;
+    font-size:24px;
+    color:Blue;
+    width: 461px;
+}
+.td1login
+{
+  font-family: Times New Roman;
+  font-size: 32px;
+  color: #000099;   
+}
+.tdthongbao
+{
+     font-family:Times New Roman;
+     font-size:14px;  
+}
+.divdichvu
+{
+    font-family:Times New Roman;
+    font-size:32px;
+    color:Blue;   
+}
+.divmassage
+{
+     font-family:Times New Roman;
+    font-size:20px;
+    color:Blue;    
+}
+.lbhtnguoidung
+{
+    color:Red;
+}

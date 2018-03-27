@@ -1,0 +1,19 @@
+a {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color:white;
+  cursor: pointer; 
+}
+.nenmenu{
+  background-color: #CCCCFF ;
+
+}
+.nennguoidung{
+  background-color: #999966;
+  color: #CCFFFF  ;
+}
+

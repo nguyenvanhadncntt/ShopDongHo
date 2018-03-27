@@ -1,0 +1,44 @@
+﻿body {
+  background-color:white;
+  color: #0000FF;
+  font-family: "Times New Roman", Times, serif;
+  font-size: medium;
+    text-align: center;
+}
+
+a {
+  color: black;
+  /*font-weight: 700;*/
+    font-size: medium;
+}
+
+a:visited {
+  color: Blue;
+}
+
+a:hover {
+  color: #C0C0C0;
+  text-decoration: underline;
+}
+ .style1
+ {
+      width: 20%;
+ }
+ .style2
+ {
+     width: 980px;
+     height: 115px;
+}
+.style3
+{
+   height: 62px;
+    color: #0000FF;
+    background-color: white;
+}
+.chudienthoai
+{
+     color: #000000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 11pt;
+    
+}

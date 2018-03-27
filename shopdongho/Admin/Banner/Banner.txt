@@ -1,0 +1,1 @@
+<embed src="Banner.swf" quality="high" type="application/x-shockwave-flash" wmode="transparent" width="1030" height="280" pluginspage="http://www.macromedia.com/go/getflashplayer" allowScriptAccess="always"></embed>

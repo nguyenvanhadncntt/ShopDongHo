@@ -1,0 +1,171 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master_all.master.cs" Inherits="ShopDongHo.Master_all" %>
+
+<%@ Register src="Controls/DS_TH.ascx" tagname="DS_TH" tagprefix="uc1" %>
+
+<%@ Register src="Controls/QUANGCAO.ascx" tagname="QUANGCAO" tagprefix="uc2" %>
+
+<%@ Register src="Controls/PhanQuyen.ascx" tagname="PhanQuyen" tagprefix="uc3" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">   
+        .auto-style2 {
+            height: 19px;
+        }
+        .auto-style3 {
+            height: 22px;
+        }
+        .auto-style4 {
+            height: 35px;
+        }
+        .auto-style5 {
+            margin-left: 0px;
+        }
+        .auto-style6 {
+            height: 126px;
+        }
+        .auto-style10 {
+            width: 65%;
+        }
+        .auto-style14 {
+            width: 6%;
+            height: 23px;
+        }
+        .auto-style15 {
+            width: 16%;
+            height: 23px;
+        }
+        .auto-style16 {
+            width: 6%;
+        }
+        .auto-style18 {
+            width: 16%;
+        }
+        .auto-style19 {
+            width: 100%;
+            margin-right: 0px;
+        }
+        .auto-style21 {
+            width: 16%;
+            height: 58px;
+        }
+        .auto-style22 {
+            height: 23px;
+        }
+        .auto-style23 {
+            width: 99%;
+            height: 100%;
+        }
+    </style>
+    <link href="App_Themes/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="auto-style19">
+            <tr>
+                <td  colspan="3">
+                    <asp:Image ID="Image3" runat="server" Height="270px" ImageUrl="~/images/antique-clock-wallpaper-desktop-background.jpg" Width="100%" />
+                    </td>
+            </tr>
+            <tr>
+                <td class="auto-style4" colspan="3" style="background-image: url('/images/New Bitmap Image.bmp'); text-align:center; color: #0000FF;">
+                    <asp:HyperLink ID="hpktc" runat="server" ForeColor="Blue" Font-Bold="True" NavigateUrl="~/TrangChu.aspx">TRANG CHỦ</asp:HyperLink>
+&nbsp; |&nbsp;
+                    <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True">GIỚI THIỆU</asp:HyperLink>
+&nbsp; |&nbsp;
+                    <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="True" NavigateUrl="~/LienHe.aspx">LIÊN HỆ</asp:HyperLink>
+&nbsp; |&nbsp;
+                    <asp:HyperLink ID="HyperLink4" runat="server" Font-Bold="True">HƯỚNG DẪN</asp:HyperLink>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style14" style="background-color: #66CCFF" align="center">
+                    <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="Blue" Font-Bold="True" Font-Italic="False" NavigateUrl="~/all.aspx">Tất cả sản phẩm</asp:HyperLink>
+                </td>
+                <td class="auto-style3" style="background-color: #66CCFF" align="center" >
+                   
+                    <asp:TextBox ID="tk" runat="server" CssClass="auto-style5" Width="220px">Nhập tên sản phẩm</asp:TextBox>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="Button1" runat="server" ForeColor="#000099" Text="Tìm kiếm" Width="96px" OnClick="Button1_Click" />
+                </td>
+                <td class="auto-style15" style="background-color: #66CCFF"></td>
+            </tr>
+            <tr>
+                <td style="background-color: #66CCFF; " valign="top">
+                    <table class="auto-style23" >
+                        <tr>
+                            <td style="background-color: #808080" align="center">
+                                <strong>GIỎ HÀNG</strong></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:ImageButton ID="ImageButton1" runat="server" Height="202px" ImageUrl="~/images/giohang.gif" Width="258px" OnClick="ImageButton1_Click" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="auto-style22" style="background-color: #FFFFFF; color: #0000FF;">Số lượng SP:<asp:Label ID="lb_sl" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="background-color: #FFFFFF; color: #0000FF;">Tổng tiền:<asp:Label ID="lb_tongtien" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="auto-style10" rowspan="5" valign="top">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+                <td class="auto-style21" valign="top" style="background-color: #66CCFF">
+                    <uc3:PhanQuyen ID="PhanQuyen1" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #999999;" align="center" class="auto-style14"><strong>CÁC THƯƠNG HIỆU</strong></td>
+                <td style="background-color: #999999;" class="auto-style15" align="center"><strong>QUẢNG CÁO</strong></td>
+            </tr>
+            <tr>
+                <td style="background-color: #66CCFF;" valign="top" class="auto-style16" >
+                    
+                    <uc1:DS_TH ID="DS_TH" runat="server" />
+                   
+                    
+                    <asp:Image ID="Image2" runat="server" ImageUrl="~/images/quangcao/1.jpg" Width="261px" Height="338px" />
+                   
+                </td>
+                <td valign="top" class="auto-style18" style="background-color: #66CCFF">
+                    <uc2:QUANGCAO ID="QUANGCAO1" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #FFFFFF;" valign="top" class="auto-style14" >
+                    </td>
+                <td valign="top" class="auto-style15">
+                    </td>
+            </tr>
+            <tr>
+                <td style="background-color: #FFFFFF;" valign="top" class="auto-style16" >
+                    &nbsp;</td>
+                <td valign="top" class="auto-style18">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="auto-style6" style="background-image: url('http://localhost:65495/images/footer.bmp')" align="center"><b> Copyright &copy; NVH14CNTT. ALL Reserve
+            <br />
+            Khoa Công Nghệ Thông Tin - Trường Đại Học Sư Phạm Đà Nẵng<br />
+            Liên Hệ : 01223546613 - Email <a href="mailto::thehaprok1996@gmail.com">:thehaprok1996@gmail.com</a>
+        <br /></td>
+            </tr>
+        </table>
+    <div>
+        
+    </div>
+    </form>
+</body>
+</html>

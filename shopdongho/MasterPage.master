@@ -1,0 +1,464 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<div id="divAdRight" style="DISPLAY: none; POSITION: absolute; TOP: 0px"> 
+<a href="http://ruacon.org/tonghop/anh.php?picture/xinh1"><img src="images/bannerchaydoc.gif" width="125" /></a>
+</div> 
+<div id="divAdLeft" style="DISPLAY: none; POSITION: absolute; TOP: 0px"> 
+<a href="http://ruacon.org/tonghop/anh.php?picture/xinh1"><img src="images/bannerchaydoc2.gif" width="125" /></a>       
+</div>
+<script>
+    function FloatTopDiv() {
+        startLX = ((document.body.clientWidth - MainContentW) / 2) - LeftBannerW - LeftAdjust, startLY = TopAdjust + 80;
+        startRX = ((document.body.clientWidth - MainContentW) / 2) + MainContentW + RightAdjust, startRY = TopAdjust + 80;
+        var d = document;
+        function ml(id) {
+            var el = d.getElementById ? d.getElementById(id) : d.all ? d.all[id] : d.layers[id];
+            el.sP = function (x, y) { this.style.left = x + 'px'; this.style.top = y + 'px'; };
+            el.x = startRX;
+            el.y = startRY;
+            return el;
+        }
+        function m2(id) {
+            var e2 = d.getElementById ? d.getElementById(id) : d.all ? d.all[id] : d.layers[id];
+            e2.sP = function (x, y) { this.style.left = x + 'px'; this.style.top = y + 'px'; };
+            e2.x = startLX;
+            e2.y = startLY;
+            return e2;
+        }
+        window.stayTopLeft = function () {
+            if (document.documentElement && document.documentElement.scrollTop)
+                var pY = document.documentElement.scrollTop;
+            else if (document.body)
+                var pY = document.body.scrollTop;
+            if (document.body.scrollTop > 30) { startLY = 3; startRY = 3; } else { startLY = TopAdjust; startRY = TopAdjust; };
+            ftlObj.y += (pY + startRY - ftlObj.y) / 16;
+            ftlObj.sP(ftlObj.x, ftlObj.y);
+            ftlObj2.y += (pY + startLY - ftlObj2.y) / 16;
+            ftlObj2.sP(ftlObj2.x, ftlObj2.y);
+            setTimeout("stayTopLeft()", 1);
+        }
+        window.stayTopRight = function () {
+            if (document.documentElement && document.documentElement.scrollTop)
+                var pY = document.documentElement.scrollTop;
+            else if (document.body)
+                var pY = document.body.scrollTop;
+            if (document.body.scrollTop > 30) { startLY = 3; startRY = 3; } else { startLY = TopAdjust; startRY = TopAdjust; };
+            ftlObj.y += (pY + startRY - ftlObj.y) / 16;
+            ftlObj.sP(ftlObj.x, ftlObj.y);
+            ftlObj2.y += (pY + startLY - ftlObj2.y) / 16;
+            ftlObj2.sP(ftlObj2.x, ftlObj2.y);
+            setTimeout("stayTopRight()", 1);
+        }
+        ftlObj = ml("divAdRight");
+        //stayTopLeft(); 
+        ftlObj2 = m2("divAdLeft");
+        stayTopLeft();
+    }
+    function ShowAdDiv() {
+        var objAdDivRight = document.getElementById("divAdRight");
+        var objAdDivLeft = document.getElementById("divAdLeft");
+        if (document.body.clientWidth < 1000) {
+            objAdDivRight.style.display = "none";
+            objAdDivLeft.style.display = "none";
+        }
+        else {
+            objAdDivRight.style.display = "block";
+            objAdDivLeft.style.display = "block";
+            FloatTopDiv();
+        }
+    }  
+</script> 
+<script>
+    document.write("<script type='text/javascript' language='javascript'>MainContentW = 1000;LeftBannerW = 125;RightBannerW = 125;LeftAdjust = 55;RightAdjust = 55;TopAdjust = 20;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>"); 
+</script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Shop </title>
+    <link href="favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" type="text/css" href="CSS/masterpage.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/Document1.css" />
+    <script language="javascript" type="text/javascript" src="js/liveclock.js"></script>
+    <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="js/fadeslideshow.js"></script>
+    <!--menu moi-->
+    <link rel="stylesheet" type="text/css" href="menu/ddsmoothmenu.css" />
+    <link rel="stylesheet" type="text/css" href="menu/ddsmoothmenu-v.css" />
+    <link href="menu/ddsmoothmenu-v.css" rel="stylesheet" type="text/css" />
+    <link href="menu/ddsmoothmenu.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript" src="menu/ddsmoothmenu.js"></script>
+
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+
+    <link href="CSS/skin.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="ddlevelsfiles/ddlevelsmenu-base.css" />
+    <link rel="stylesheet" type="text/css" href="ddlevelsfiles/ddlevelsmenu-topbar.css" />
+    <link rel="stylesheet" type="text/css" href="ddlevelsfiles/ddlevelsmenu-sidebar.css" />
+
+    <script type="text/javascript" src="ddlevelsfiles/ddlevelsmenu.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
+    <style type="text/css">
+        .style5
+        {
+            width: 643px;
+        }
+        .style11
+        {
+            background-color: #FFFFFF;
+            color: #0000FF;
+            text-align: left;
+            font-size: medium;
+        }
+        #Div2
+        {
+            background-color: #93dafd;
+        }
+        .MsoNormal
+        {
+            text-align: center;
+            background-color: #66CCFF;
+        }
+        .style13
+        {
+            color: #0000FF;
+        }
+        .style14
+        {
+            color: #0000FF;
+            background-color: white;
+        }
+        .style18
+        {
+            width: 293px;
+            height: 139px;
+        }
+        .style19
+        {
+            height: 57px;
+            width: 210px;
+        }
+        .style21
+        {
+            width: 292px;
+            height: 122px;
+        }
+        .style22
+        {
+            color: Red;
+            width: 210px;
+        }
+        .style23
+        {
+            width: 210px;
+        }
+        </style>
+    
+    </head>
+<body bgcolor="#66CCFF" >
+    <form id="form1" runat="server">
+    <div style="text-align: center; font-size: medium">
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/TrangChu.aspx">TRANG CHỦ</asp:HyperLink>
+&nbsp;<asp:Label ID="Label30" runat="server" Text="|"></asp:Label>
+        &nbsp;<asp:HyperLink ID="HyperLink2" runat="server" 
+            NavigateUrl="~/Aboutshop.aspx">GIỚI THIỆU</asp:HyperLink>
+&nbsp;<asp:Label ID="Label2" runat="server" Text="|"></asp:Label>
+&nbsp;<asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Huongdan.aspx">HƯỚNG DẪN</asp:HyperLink>
+&nbsp;<asp:Label ID="Label3" runat="server" Text="|"></asp:Label>
+&nbsp;<asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Lienhe.aspx">LIÊN HỆ</asp:HyperLink>
+&nbsp;<asp:Label ID="Label4" runat="server" Text="|"></asp:Label>
+
+&nbsp;<asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/uudai.aspx">ƯU ĐÃI</asp:HyperLink>
+&nbsp;<asp:Label ID="Label6" runat="server" Text="|"></asp:Label>
+&nbsp;<asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Dangnhap.aspx">ĐĂNG NHẬP</asp:HyperLink>
+&nbsp;<asp:Label ID="Label7" runat="server" Text="|"></asp:Label>
+&nbsp;<asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Dangky.aspx">ĐĂNG KÝ</asp:HyperLink>
+        <br />
+    </div>
+    <table align="center" border="2px" bordercolor="while" width="990px" 
+        style="background-color: #93dafd">
+        <tr>
+            <td colspan="3" bgcolor="#93dafd" style="text-align: center"><span class="style11"><!--banner-->
+                </span>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
+                    codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" 
+                    width="1000" height="260" style="margin-top: 1px">
+                <param name="movie" value="Banner/banner.swf" />
+                <param name="quality" value="high" />
+                <param name="allowScriptAccess" value="always" />
+                <param name="wmode" value="transparent">
+                <embed src="Banner/Banner.swf"
+                quality="high"
+                type="application/x-shockwave-flash"
+                WMODE="transparent"
+                width="1030px"
+                height="280px"
+                pluginspage="http://www.macromedia.com/go/getflashplayer"
+                allowScriptAccess="always" />
+                 </object>
+            </td><!--End banner-->
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: center; background-color: #FFFFFF;" 
+                bgcolor="#66CCFF"><span class="style11"><!--chu chay-->
+                </span>
+               <marquee direction = "left"  scrollamount="2" scrolldelay="8" 
+                    onmouseover='this.stop()' onmouseout='this.start()' 
+                    style="color: #fd6407;font-family:'Times New Roman';font-size:30px" class="style11"> WELCOME WITH SHOP 3HA</marquee> 
+                    <a href="http://www.taochu.com"><img src="http://taochu.com/gen/gimg/1/w.gif" border="0"></a> <a href="http://www.taochu.com"><img src="http://taochu.com/gen/gimg/1/e.gif" border="0"></a> <a href="http://www.taochu.com"><img src="http://taochu.com/gen/gimg/1/l.gif" border="0"></a> <a href="http://www.taochu.com"><img src="http://taochu.com/gen/gimg/1/c.gif" border="0"></a> <a href="http://www.taochu.com"><img src="http://taochu.com/gen/gimg/1/o.gif" border="0"></a> <a href="http://www.taochu.com"><img src="http://taochu.com/gen/gimg/1/m.gif" border="0"></a> <a href="http://www.taochu.com"><img src="http://taochu.com/gen/gimg/1/e.gif" border="0"></a> <a href="http://www.taochu.com"><img src="http://taochu.com/gen/gimg/-.gif" border="0"></a> <a href="http://www.taochu.com"><img src="http://taochu.com/gen/gimg/1/s.gif" border="0"></a> <a href="http://www.taochu.com"><img src="http://taochu.com/gen/gimg/1/h.gif" border="0"></a> <a href="http://www.taochu.com"><img src="http://taochu.com/gen/gimg/1/o.gif" border="0"></a> <a href="http://www.taochu.com"><img src="http://taochu.com/gen/gimg/1/p.gif" border="0"></a>   
+            </td><!--End chu chay-->
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: center; background-color: #93dafd;" 
+                bgcolor="#66CCFF">
+                            <asp:HyperLink ID="HyperLink21" runat="server" NavigateUrl="~/Sanpham.aspx">Tất cả các sản phẩm</asp:HyperLink>
+                            &nbsp;<asp:Label ID="Label31" runat="server" Text="|"></asp:Label>
+                            &nbsp; 
+                            <asp:HyperLink ID="HyperLink16" runat="server" 
+                                ImageUrl="~/images/icon/moi.gif" NavigateUrl="~/Sanphammoi.aspx">Sản phẩm mới</asp:HyperLink>
+&nbsp;
+                            &nbsp;&nbsp;&nbsp;
+                            <asp:TextBox ID="txtTimKiem" runat="server" Width="16%">Nhập tên sản phẩm</asp:TextBox>
+                        &nbsp;
+                &nbsp;&nbsp;
+                            <asp:Button ID="btTimKiem" runat="server" Text="Tìm kiếm" 
+                                onclick="btTimKiem_Click" 
+                                
+                    style="font-weight: 700; color: #0000FF; background-color: white;" Height="23px" />
+            &nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            <asp:DropDownList ID="drp_gia" runat="server" Height="22px" Width="152px">
+                                <asp:ListItem>Chọn giá</asp:ListItem>
+                                <asp:ListItem>Dưới 100000 vnđ</asp:ListItem>
+                                <asp:ListItem>100000 - 200000 vnđ</asp:ListItem>
+                                <asp:ListItem>Trên 200000 vnđ</asp:ListItem>
+                            </asp:DropDownList>
+&nbsp;&nbsp;&nbsp;<asp:Button ID="bt_tim" runat="server" style="color: #0000FF; background-color: white" Text="Tìm kiếm" 
+                                Width="72px" onclick="bt_tim_Click" />
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#66CCFF" valign="top" align="center" 
+                style="background-color: #FFFFFF; font-weight: 700;" class="style22">GIỎ HÀNG</td>
+            <td valign="top" bgcolor="White" rowspan="10" class="style5">   
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                
+            </td>
+            <td width="180px" bgcolor="#66CCFF" rowspan="10" valign="top" 
+                style="background-color: #93dafd">
+                <table style="width:226px; background-color: #93dafd;">
+                           <tr>
+                               <td style="text-align: center; background-color: #FFFFFF; font-weight: 700;" 
+                                   class="lbhtnguoidung">
+                                   ĐĂNG NHẬP</td>
+                           </tr>
+                           <tr>
+                               <td 
+                                   style="border-color: #FFFFFF; text-align: left; background-color: #93dafd">
+                                   <asp:Label ID="Label13" runat="server" CssClass="style13" Text="Tên đăng nhập:"></asp:Label>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td style="text-align: center; background-color: #93dafd">
+                                   &nbsp;<asp:TextBox ID="txt_tendangnhap" runat="server" Width="135px"></asp:TextBox>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td style="text-align: left; background-color: #93dafd">
+                                   <asp:Label ID="Label14" runat="server" CssClass="style13" Text="Password:"></asp:Label>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td style="background-color: #93dafd; text-align: center;" align="left">
+                                   &nbsp;<asp:TextBox ID="txt_matkhau" 
+                                       runat="server" Width="136px" TextMode="Password"></asp:TextBox>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td style="font-size: medium; background-color: #93dafd; text-align: center;" 
+                                   align="left">
+                                   <asp:Button ID="bt_dangnhap" runat="server" CssClass="style14" 
+                                       Text="Đăng nhập" onclick="bt_dangnhap_Click" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <asp:Button ID="Bt_thoat" runat="server" CssClass="style14" 
+                                       Text="Thoát" onclick="Bt_thoat_Click" Width="73px" />
+&nbsp;</td>
+                           </tr>
+                           <tr>
+                               <td style="font-size: medium; background-color: #93dafd; text-align: center;" 
+                                   align="left">
+                                   <asp:Label ID="lbl_thongbao" runat="server" style="color: #FF0000"></asp:Label>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td style="font-size: medium; background-color: #93dafd; text-align: center;" 
+                                   align="left">
+                                   <asp:HyperLink ID="HyperLink19" runat="server" NavigateUrl="~/Quenmatkhau.aspx">[Quên mật khẩu]</asp:HyperLink>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td style="font-size: medium; background-color: #93dafd; text-align: center;" 
+                                   align="left">
+                                   <asp:HyperLink ID="HyperLink20" runat="server" NavigateUrl="~/Dangky.aspx">[Đăng ký]</asp:HyperLink>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td style="font-size: medium; text-align: center; background-color: #FFFFFF; font-weight: 700;" 
+                                   align="left" class="lbhtnguoidung">
+                                   QUẢNG CÁO</td>
+                           </tr>
+                       </table>
+             
+                <div id="Div2">
+                       &nbsp;<asp:DataList 
+                           ID="DataList1" runat="server" DataSourceID="SqlDataSource1" Width="185px" 
+                           onselectedindexchanged="DataList1_SelectedIndexChanged">
+                           <ItemTemplate>
+                               <table style="width:100%;">
+                                   <tr>
+                                       <td>
+                                           <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("ANHQUANGCAO") %>'  
+                                               Height="137px" Width="220px" />
+                                       </td>
+                                   </tr>
+                               </table>
+                           </ItemTemplate>
+                       </asp:DataList>
+                       <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                           ConnectionString="<%$ ConnectionStrings:thoitrangteen %>" 
+                           SelectCommand="SELECT [ANHQUANGCAO] FROM [QUANGCAO]">
+                       </asp:SqlDataSource>
+                </div>
+             </td>
+        </tr>
+        <tr>
+            <td bgcolor="#93dafd" valign="top" align="center" 
+                style="color: #0000FF; background-color: #93dafd" class="style23">
+                <div>
+                    <table style="width: 100%; background-color: #93dafd;">
+                        <tr>
+                            <td>
+                                <div>
+                <asp:ImageButton ID="ImageButton2" runat="server" Height="131px" 
+                                       ImageUrl="~/images/giohang.gif" PostBackUrl="~/Giohang.aspx" 
+                                       Width="213px"/>
+                                    &nbsp;</div>
+               
+                 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="background-color: white">
+                <asp:Label ID="Label8" runat="server" Text="Số lượng SP:"></asp:Label>
+&nbsp;<asp:Label ID="lblsl" runat="server" style="text-align: left; color: #FF0000;"></asp:Label>
+               
+                 
+                                </div>
+               
+                 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="background-color: white">
+                <asp:Label ID="Label9" runat="server" Text="Tổng tiền:"></asp:Label>
+                                   <asp:Label ID="lbltt" runat="server" style="text-align: left; color: #FF0000;"></asp:Label>
+               
+                 
+                                </div>
+               
+                 
+                            </td>
+                        </tr>
+                        </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#66CCFF" valign="top" align="center" 
+                style="color: #0000FF; background-color: #FFFFFF; font-weight: 700;" 
+                class="style23">
+                <span class="lbhtnguoidung">THƯƠNG HIỆU</span><br class="style11" />
+                <span class="style11">
+                <!--Left Menu-->
+               
+                 
+                </span>
+               
+                 
+            </td><!--End Left Menu-->
+        </tr>
+        <tr>
+            <td bgcolor="#00CC33" valign="top" 
+                style="background-color: #93dafd" class="style23">
+               
+                 
+                <div style="text-align: center; background-color: #93dafd;">
+               
+                 
+                <asp:Label ID="lblMenuleft" runat="server" 
+                        style="color: #0000FF; font-size: medium;"></asp:Label>
+               
+                 
+                </div>
+               
+                 
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="White" 
+                style="background-color: #FFFFFF; font-weight: 700;" class="style22">
+                DÒNG SẢN PHẨM</td>
+        </tr>
+        <tr>
+            <td align="left" bgcolor="White" style="background-color: #93dafd" 
+                class="style23">
+                <div style="background-color: #93dafd">
+                <asp:Label ID="lbl_phukien" runat="server" 
+                    style="color: #0000FF; font-size: medium;"></asp:Label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+       >
+        </tr>
+        <tr>
+            <td align="left" bgcolor="White" style="background-color: #93dafd" 
+                class="style19">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td align="left" bgcolor="White" style="background-color: #93dafd" 
+                class="style23">
+                <img alt="" class="style21" src="images/quangcao/2.jpg" /><br />
+                <br />
+                <br />
+                <br />
+                <img alt="" class="style18" src="images/quangcao/tuvantamly.jpg" /></td>
+        </tr>
+        </table>
+        <div>
+        </div>
+        <div style="text-align: center">
+            <asp:HyperLink ID="HyperLink22" runat="server" NavigateUrl="~/TrangChu.aspx">Trang chủ</asp:HyperLink>
+&nbsp;<asp:Label ID="Label25" runat="server" Text="|"></asp:Label>
+&nbsp;<asp:HyperLink ID="HyperLink23" runat="server" NavigateUrl="http://tintuc102.com">Tin tức</asp:HyperLink>
+&nbsp;<asp:Label ID="Label26" runat="server" Text="|"></asp:Label>
+&nbsp;<asp:HyperLink ID="HyperLink24" runat="server" NavigateUrl="http://mp3.zing.vn">Nghe nhạc</asp:HyperLink>
+&nbsp;<asp:Label ID="Label27" runat="server" Text="|"></asp:Label>
+&nbsp;<asp:HyperLink ID="HyperLink25" runat="server" NavigateUrl="http://vuaphim.net">Xem phim</asp:HyperLink>
+&nbsp;<asp:Label ID="Label28" runat="server" Text="|"></asp:Label>
+&nbsp;<asp:HyperLink ID="HyperLink26" runat="server" 
+                NavigateUrl="http://www.facebook.com.vn">facebook</asp:HyperLink>
+&nbsp;<asp:Label ID="Label29" runat="server" Text="|"></asp:Label>
+&nbsp;<asp:HyperLink ID="HyperLink27" runat="server" NavigateUrl="http://www.google.com">Google</asp:HyperLink>
+&nbsp;</div>
+    </form>
+    </body>
+    <!-- Đồng hồ footer -->
+    
+
+</html>

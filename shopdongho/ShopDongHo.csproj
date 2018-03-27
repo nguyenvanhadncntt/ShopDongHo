@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D9F5E36D-34FE-4997-98A6-FA1B673CBB04}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShopDongHo</RootNamespace>
+    <AssemblyName>ShopDongHo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Style.css" />
+    <Content Include="CapNhapThongTinCaNhan.aspx" />
+    <Content Include="ChiTietSP.aspx" />
+    <Content Include="Controls\PhanQuyen.ascx" />
+    <Content Include="DangKy.aspx" />
+    <Content Include="DangXuat.aspx" />
+    <Content Include="DatHang.aspx" />
+    <Content Include="DoiMatKhau.aspx" />
+    <Content Include="Giohang.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="images\iconhot.gif" />
+    <Content Include="images\icon\application-form.png" />
+    <Content Include="images\icon\exit.png" />
+    <Content Include="images\icon\history-brush.png" />
+    <Content Include="images\icon\manager %281%29.png" />
+    <Content Include="images\icon\manager.png" />
+    <Content Include="images\icon\shift-change %281%29.png" />
+    <Content Include="images\icon\shift-change.png" />
+    <Content Include="images\images.jpg" />
+    <Content Include="images\Rainbow-color-animated-hello.gif" />
+    <Content Include="jquery-3.0.0.js" />
+    <Content Include="LichSuMuaHang.aspx" />
+    <Content Include="LienHe.aspx" />
+    <Content Include="LoginSuccess.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Master_all.Master" />
+    <Content Include="QuanLyAdmin.aspx" />
+    <Content Include="QuanLy_SP.aspx" />
+    <Content Include="SanPhamChuaDuocMua.aspx" />
+    <Content Include="ThongKeCachoadon.aspx" />
+    <Content Include="ThongKeHangCon.aspx" />
+    <Content Include="ThongKeSoLuongBanDuoc.aspx" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="Admin.master" />
+    <Content Include="DataReport.xsc">
+      <DependentUpon>DataReport.xsd</DependentUpon>
+    </Content>
+    <None Include="DataReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataReport.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataReport.xss">
+      <DependentUpon>DataReport.xsd</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="all.aspx" />
+    <Content Include="Controls\DS_TH.ascx" />
+    <Content Include="Controls\QUANGCAO.ascx" />
+    <Content Include="Controls\TatCaSP.ascx" />
+    <Content Include="images\antique-clock-wallpaper-desktop-background.jpg" />
+    <Content Include="images\bannerchaydoc.gif" />
+    <Content Include="images\bannerchaydoc2.gif" />
+    <Content Include="images\beautiful_time_clock_wallpaper-1024x640.jpg" />
+    <Content Include="images\bg-menu-top-contenu.png" />
+    <Content Include="images\bg_menu_top.jpg" />
+    <Content Include="images\bg_menu_top.png" />
+    <Content Include="images\bg_mnu_header.jpg" />
+    <Content Include="images\footer.bmp" />
+    <Content Include="images\footer_banner.jpg" />
+    <Content Include="images\giohang.gif" />
+    <Content Include="images\icon\1.jpg" />
+    <Content Include="images\icon\2.jpg" />
+    <Content Include="images\icon\3.jpg" />
+    <Content Include="images\icon\4.jpg" />
+    <Content Include="images\icon\5.jpg" />
+    <Content Include="images\icon\6.jpg" />
+    <Content Include="images\icon\7.jpg" />
+    <Content Include="images\icon\8.jpg" />
+    <Content Include="images\icon\9.jpg" />
+    <Content Include="images\icon\doimatkhau.png" />
+    <Content Include="images\icon\moi.gif" />
+    <Content Include="images\icon\sua.gif" />
+    <Content Include="images\icon\them.png" />
+    <Content Include="images\icon\tim.jpg" />
+    <Content Include="images\icon\xoa.png" />
+    <Content Include="images\mienphi.jpg" />
+    <Content Include="images\nenxanh_cottrai.gif" />
+    <Content Include="images\New Bitmap Image.bmp" />
+    <Content Include="images\new.gif" />
+    <Content Include="images\quangcao\1.jpg" />
+    <Content Include="images\quangcao\2.jpg" />
+    <Content Include="images\quangcao\3.jpg" />
+    <Content Include="images\quangcao\4.jpg" />
+    <Content Include="images\quangcao\5.jpg" />
+    <Content Include="images\quangcao\beyond.jpg" />
+    <Content Include="images\quangcao\biahuda.jpg" />
+    <Content Include="images\quangcao\nokia.jpg" />
+    <Content Include="images\quangcao\ps.jpg" />
+    <Content Include="images\quangcao\tuvantamly.jpg" />
+    <Content Include="images\sanpham\1.jpg" />
+    <Content Include="images\sanpham\10.jpg" />
+    <Content Include="images\sanpham\100.png" />
+    <Content Include="images\sanpham\101.jpg" />
+    <Content Include="images\sanpham\102.jpg" />
+    <Content Include="images\sanpham\11.jpg" />
+    <Content Include="images\sanpham\12.jpg" />
+    <Content Include="images\sanpham\13.jpg" />
+    <Content Include="images\sanpham\1359014558.jpg" />
+    <Content Include="images\sanpham\14.jpg" />
+    <Content Include="images\sanpham\15.jpg" />
+    <Content Include="images\sanpham\16.jpg" />
+    <Content Include="images\sanpham\17.jpg" />
+    <Content Include="images\sanpham\18.jpg" />
+    <Content Include="images\sanpham\19.jpg" />
+    <Content Include="images\sanpham\2.png" />
+    <Content Include="images\sanpham\20.jpg" />
+    <Content Include="images\sanpham\21.jpg" />
+    <Content Include="images\sanpham\22.jpg" />
+    <Content Include="images\sanpham\23.jpg" />
+    <Content Include="images\sanpham\24.jpg" />
+    <Content Include="images\sanpham\25.jpg" />
+    <Content Include="images\sanpham\26.jpg" />
+    <Content Include="images\sanpham\27.jpg" />
+    <Content Include="images\sanpham\28.jpg" />
+    <Content Include="images\sanpham\29.jpg" />
+    <Content Include="images\sanpham\3.jpg" />
+    <Content Include="images\sanpham\30.jpg" />
+    <Content Include="images\sanpham\31.jpg" />
+    <Content Include="images\sanpham\32.jpg" />
+    <Content Include="images\sanpham\33.jpg" />
+    <Content Include="images\sanpham\34.jpg" />
+    <Content Include="images\sanpham\35.jpg" />
+    <Content Include="images\sanpham\36.jpg" />
+    <Content Include="images\sanpham\37.jpg" />
+    <Content Include="images\sanpham\38.jpg" />
+    <Content Include="images\sanpham\39.jpg" />
+    <Content Include="images\sanpham\4.jpg" />
+    <Content Include="images\sanpham\40.jpg" />
+    <Content Include="images\sanpham\41.png" />
+    <Content Include="images\sanpham\42.png" />
+    <Content Include="images\sanpham\43.jpg" />
+    <Content Include="images\sanpham\44.jpg" />
+    <Content Include="images\sanpham\45.jpg" />
+    <Content Include="images\sanpham\46.jpg" />
+    <Content Include="images\sanpham\47.jpg" />
+    <Content Include="images\sanpham\47.png" />
+    <Content Include="images\sanpham\48.jpg" />
+    <Content Include="images\sanpham\49.jpg" />
+    <Content Include="images\sanpham\5.jpg" />
+    <Content Include="images\sanpham\50.jpg" />
+    <Content Include="images\sanpham\51.jpg" />
+    <Content Include="images\sanpham\52.jpg" />
+    <Content Include="images\sanpham\53.jpg" />
+    <Content Include="images\sanpham\54.jpg" />
+    <Content Include="images\sanpham\55.jpg" />
+    <Content Include="images\sanpham\56.jpg" />
+    <Content Include="images\sanpham\57.jpg" />
+    <Content Include="images\sanpham\58.jpg" />
+    <Content Include="images\sanpham\59.jpg" />
+    <Content Include="images\sanpham\6.jpg" />
+    <Content Include="images\sanpham\60.jpg" />
+    <Content Include="images\sanpham\61.jpg" />
+    <Content Include="images\sanpham\62.jpg" />
+    <Content Include="images\sanpham\63.jpg" />
+    <Content Include="images\sanpham\64.jpg" />
+    <Content Include="images\sanpham\65.jpg" />
+    <Content Include="images\sanpham\66.jpg" />
+    <Content Include="images\sanpham\67.jpg" />
+    <Content Include="images\sanpham\68.jpg" />
+    <Content Include="images\sanpham\69.jpg" />
+    <Content Include="images\sanpham\7.jpg" />
+    <Content Include="images\sanpham\70.jpg" />
+    <Content Include="images\sanpham\71.jpg" />
+    <Content Include="images\sanpham\72.jpg" />
+    <Content Include="images\sanpham\73.jpg" />
+    <Content Include="images\sanpham\74.jpg" />
+    <Content Include="images\sanpham\75.jpg" />
+    <Content Include="images\sanpham\76.png" />
+    <Content Include="images\sanpham\77.png" />
+    <Content Include="images\sanpham\78.png" />
+    <Content Include="images\sanpham\79.png" />
+    <Content Include="images\sanpham\8.jpg" />
+    <Content Include="images\sanpham\80.png" />
+    <Content Include="images\sanpham\81.jpg" />
+    <Content Include="images\sanpham\82.jpg" />
+    <Content Include="images\sanpham\83.jpg" />
+    <Content Include="images\sanpham\84.jpg" />
+    <Content Include="images\sanpham\85.jpg" />
+    <Content Include="images\sanpham\86.jpg" />
+    <Content Include="images\sanpham\87.jpg" />
+    <Content Include="images\sanpham\88.jpg" />
+    <Content Include="images\sanpham\89.jpg" />
+    <Content Include="images\sanpham\9.jpg" />
+    <Content Include="images\sanpham\90.jpg" />
+    <Content Include="images\sanpham\91.jpg" />
+    <Content Include="images\sanpham\92.jpg" />
+    <Content Include="images\sanpham\93.jpg" />
+    <Content Include="images\sanpham\94.jpg" />
+    <Content Include="images\sanpham\95.jpg" />
+    <Content Include="images\sanpham\96.jpg" />
+    <Content Include="images\sanpham\97.jpg" />
+    <Content Include="images\sanpham\98.jpg" />
+    <Content Include="images\sanpham\99.jpg" />
+    <Content Include="images\sanpham\my-pham-ohui-kem-che-khuyet-diem-bong-muot-giam-kho-rat.jpg" />
+    <Content Include="images\stock-vector-tick-sign-icon-check-mark-symbol-blue-circle-button-with-icon-vector-413880346.jpg" />
+    <Content Include="scripts\ai.0.15.0-build58334.js" />
+    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="ThongTinCaNhan.aspx" />
+    <Content Include="ThuongHieu.aspx" />
+    <Content Include="TimKiem.aspx" />
+    <Content Include="TrangChu.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.master.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.master.designer.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+    </Compile>
+    <Compile Include="all.aspx.cs">
+      <DependentUpon>all.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="all.aspx.designer.cs">
+      <DependentUpon>all.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CapNhapThongTinCaNhan.aspx.cs">
+      <DependentUpon>CapNhapThongTinCaNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CapNhapThongTinCaNhan.aspx.designer.cs">
+      <DependentUpon>CapNhapThongTinCaNhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietSP.aspx.cs">
+      <DependentUpon>ChiTietSP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietSP.aspx.designer.cs">
+      <DependentUpon>ChiTietSP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DS_TH.ascx.cs">
+      <DependentUpon>DS_TH.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DS_TH.ascx.designer.cs">
+      <DependentUpon>DS_TH.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PhanQuyen.ascx.cs">
+      <DependentUpon>PhanQuyen.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PhanQuyen.ascx.designer.cs">
+      <DependentUpon>PhanQuyen.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QUANGCAO.ascx.cs">
+      <DependentUpon>QUANGCAO.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\QUANGCAO.ascx.designer.cs">
+      <DependentUpon>QUANGCAO.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TatCaSP.ascx.cs">
+      <DependentUpon>TatCaSP.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\TatCaSP.ascx.designer.cs">
+      <DependentUpon>TatCaSP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_code\KetNoi.cs" />
+    <Compile Include="DangKy.aspx.cs">
+      <DependentUpon>DangKy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangKy.aspx.designer.cs">
+      <DependentUpon>DangKy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangXuat.aspx.cs">
+      <DependentUpon>DangXuat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangXuat.aspx.designer.cs">
+      <DependentUpon>DangXuat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatHang.aspx.cs">
+      <DependentUpon>DatHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatHang.aspx.designer.cs">
+      <DependentUpon>DatHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoiMatKhau.aspx.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoiMatKhau.aspx.designer.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Giohang.aspx.cs">
+      <DependentUpon>Giohang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Giohang.aspx.designer.cs">
+      <DependentUpon>Giohang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LichSuMuaHang.aspx.cs">
+      <DependentUpon>LichSuMuaHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LichSuMuaHang.aspx.designer.cs">
+      <DependentUpon>LichSuMuaHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LienHe.aspx.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LienHe.aspx.designer.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginSuccess.aspx.cs">
+      <DependentUpon>LoginSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginSuccess.aspx.designer.cs">
+      <DependentUpon>LoginSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master_all.Master.cs">
+      <DependentUpon>Master_all.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master_all.Master.designer.cs">
+      <DependentUpon>Master_all.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyAdmin.aspx.cs">
+      <DependentUpon>QuanLyAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanLyAdmin.aspx.designer.cs">
+      <DependentUpon>QuanLyAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy_SP.aspx.cs">
+      <DependentUpon>QuanLy_SP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanLy_SP.aspx.designer.cs">
+      <DependentUpon>QuanLy_SP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SanPhamChuaDuocMua.aspx.cs">
+      <DependentUpon>SanPhamChuaDuocMua.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SanPhamChuaDuocMua.aspx.designer.cs">
+      <DependentUpon>SanPhamChuaDuocMua.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKeCachoadon.aspx.cs">
+      <DependentUpon>ThongKeCachoadon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongKeCachoadon.aspx.designer.cs">
+      <DependentUpon>ThongKeCachoadon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKeHangCon.aspx.cs">
+      <DependentUpon>ThongKeHangCon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongKeHangCon.aspx.designer.cs">
+      <DependentUpon>ThongKeHangCon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKeSoLuongBanDuoc.aspx.cs">
+      <DependentUpon>ThongKeSoLuongBanDuoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongKeSoLuongBanDuoc.aspx.designer.cs">
+      <DependentUpon>ThongKeSoLuongBanDuoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinCaNhan.aspx.cs">
+      <DependentUpon>ThongTinCaNhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongTinCaNhan.aspx.designer.cs">
+      <DependentUpon>ThongTinCaNhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThuongHieu.aspx.cs">
+      <DependentUpon>ThuongHieu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThuongHieu.aspx.designer.cs">
+      <DependentUpon>ThuongHieu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TimKiem.aspx.cs">
+      <DependentUpon>TimKiem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TimKiem.aspx.designer.cs">
+      <DependentUpon>TimKiem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrangChu.aspx.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrangChu.aspx.designer.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_code\WebMsgBox.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Themes\Theme1\" />
+    <Folder Include="imageUser\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65495</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:65495/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

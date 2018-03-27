@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Master_all.Master" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="ShopDongHo.Admin" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style24 {
+            width: 100%;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
+    <table class="auto-style24">
+        <tr>
+            <td style="background-color: #99CCFF">
+                <asp:Image ID="Image4" runat="server" Height="18px" ImageUrl="~/images/icon/3.jpg" Width="24px" />
+                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/QuanLy_SP.aspx">Quản lý sản phẩm</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Image ID="Image5" runat="server" Height="18px" ImageUrl="~/images/icon/6.jpg" Width="24px" />
+                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/ThongKeCachoadon.aspx">Thống kê các hóa đơn và khách hàng</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Image ID="Image6" runat="server" Height="18px" ImageUrl="~/images/icon/7.jpg" Width="24px" />
+                <asp:HyperLink ID="HyperLink7" runat="server">Thống kê số lượng bán được</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Image ID="Image8" runat="server" Height="18px" ImageUrl="~/images/icon/9.jpg" Width="24px" />
+                <asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/SanPhamChuaDuocMua.aspx">Các sản phẩm chưa được mua</asp:HyperLink>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
+    <br />
+   
+</asp:Content>

@@ -1,0 +1,9 @@
+﻿a:link, a:visited
+{
+    text-decoration:none;
+}
+a:hover
+{
+    text-decoration:underline;
+    color:orange
+}
